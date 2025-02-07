@@ -36,7 +36,7 @@
             border-radius: 5px;
             cursor: pointer;
         }
-        .hidden-message, .hidden-photo, .hidden-audio {
+        .hidden-message, .hidden-photo {
             display: none;
             margin-top: 20px;
             font-size: 18px;
@@ -48,9 +48,11 @@
     </style>
 </head>
 <body>
+    <!-- Audio Element -->
     <audio id="background-music" loop>
-        <source src="https://github.com/SV-cyber/BirthdaySurprise/blob/22945c9056d6f672e965a990a37559431e3ad917/humdard.mp3" type="audio/mpeg">
+        <source src="https://raw.githubusercontent.com/SV-cyber/BirthdaySurprise/main/humdard.mp3" type="audio/mpeg">
     </audio>
+
     <div class="container">
         <h2>Happy Birthday Chainika! ❤️</h2>
         <p>Answer these questions correctly to unlock your surprise!</p>
@@ -58,8 +60,9 @@
         <input type="password" id="password" placeholder="Enter the name of our fav food...">
         <button onclick="checkAnswers()">Unlock Surprise</button>
         <p class="hidden-message" id="message">Happy Birthday Love! 🎉❤️</p>
-        <img src="https://github.com/SV-cyber/BirthdaySurprise/blob/17c8e40c57c8870bd94770e81a0bd649398c9af7/IMG_20220930_22195146%20-%20Copy.jpg" class="hidden-photo" id="photo">
+        <img src="https://raw.githubusercontent.com/SV-cyber/BirthdaySurprise/main/IMG_20220930_22195146 - Copy.jpg" class="hidden-photo" id="photo">
     </div>
+
     <script>
         function checkAnswers() {
             var answer1 = document.getElementById("q1").value;
@@ -70,7 +73,10 @@
             if (inputPassword.toLowerCase() === correctPassword.toLowerCase() && answer1.toLowerCase() === correctAnswer1.toLowerCase()) {
                 document.getElementById("message").style.display = "block";
                 document.getElementById("photo").style.display = "block";
-                document.getElementById("background-music").play();
+
+                // Play music on button click (fix autoplay issue)
+                var music = document.getElementById("background-music");
+                music.play().catch(error => console.log("Autoplay blocked, user interaction required"));
             } else {
                 alert("Oops! Try again with the correct answers.");
             }
