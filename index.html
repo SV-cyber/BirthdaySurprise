@@ -48,14 +48,17 @@
     </style>
 </head>
 <body>
- <div class="container">
+    <audio id="background-music" loop>
+        <source src="https://github.com/SV-cyber/BirthdaySurprise/blob/22945c9056d6f672e965a990a37559431e3ad917/humdard.mp3" type="audio/mpeg">
+    </audio>
+    <div class="container">
         <h2>Happy Birthday Chainika! ❤️</h2>
         <p>Answer these questions correctly to unlock your surprise!</p>
         <input type="text" id="q1" placeholder="What did I call you?">
         <input type="password" id="password" placeholder="Enter the name of our fav food...">
         <button onclick="checkAnswers()">Unlock Surprise</button>
         <p class="hidden-message" id="message">Happy Birthday My Love! 🎉❤️</p>
-        <img src="https://github.com/SV-cyber/BirthdaySurprise/blob/e06a0599ada456f76a7cbb22c0ad4a04c9f0ef06/IMG_20220930_22195146%20-%20Copy.jpg" class="hidden-photo" id="photo">
+        <img src="https://github.com/SV-cyber/BirthdaySurprise/blob/22945c9056d6f672e965a990a37559431e3ad917/IMG_20220930_22195146%20-%20Copy.jpg" class="hidden-photo" id="photo">
     </div>
     <script>
         function checkAnswers() {
