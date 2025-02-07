@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Love, Chainika ❤️</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            padding: 50px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+        }
+        button {
+            background: white;
+            color: #ff758c;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .hidden-message, .hidden-photo, .hidden-audio {
+            display: none;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        .hidden-photo {
+            width: 100%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <audio id="background-music" loop>
+        <source src="C:\Users\visha\OneDrive\Desktop\html birthday\humdard.mp3" type="audio/mpeg">
+    </audio>
+    <div class="container">
+        <h2>Happy Birthday Chainika! ❤️</h2>
+        <p>Answer these questions correctly to unlock your surprise!</p>
+        <input type="text" id="q1" placeholder="What did I call you?">
+        <input type="password" id="password" placeholder="Enter the name of our fav food...">
+        <button onclick="checkAnswers()">Unlock Surprise</button>
+        <p class="hidden-message" id="message">Happy Birthday My Love! 🎉❤️</p>
+        <img src="C:\Users\visha\OneDrive\Desktop\html birthday\IMG_20220930_22195146 - Copy.jpg" class="hidden-photo" id="photo">
+    </div>
+    <script>
+        function checkAnswers() {
+            var answer1 = document.getElementById("q1").value;
+            var inputPassword = document.getElementById("password").value;
+            var correctPassword = "chicken rice";
+            var correctAnswer1 = "chai"; // Replace with actual nickname
+            
+            if (inputPassword.toLowerCase() === correctPassword.toLowerCase() && answer1.toLowerCase() === correctAnswer1.toLowerCase()) {
+                document.getElementById("message").style.display = "block";
+                document.getElementById("photo").style.display = "block";
+                document.getElementById("background-music").play();
+            } else {
+                alert("Oops! Try again with the correct answers.");
+            }
+        }
+    </script>
+</body>
+</html>
